@@ -8,5 +8,5 @@ This project is still work in progress.
 
 
 ## Demo
-[`See a demo here!`](https://riscv-zjv.github.io/riscv-platinum/)
+[`See a demo here!`](https://riscv-zju.github.io/riscv-platinum/)
 
