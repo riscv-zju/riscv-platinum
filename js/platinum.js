@@ -80,10 +80,10 @@ function enableWindowResize() {
 
 function enableWindowZoom() {
     // Zoom Box -- Make Window Full Screen and toggle back
-    jQuery(".zoom-box").on("click", function () {
-        b = this.closest(".content");
-        isMax = jQuery(this).data("max");
-        i = jQuery(b).children(".inner");
+    $("#app-holder").on("click", ".zoom-box", function () {
+        var b = this.closest(".content");
+        var isMax = jQuery(this).data("max");
+        var i = jQuery(b).children(".inner");
         console.log(i);
         if (!isMax) {
             jQuery(b)
@@ -112,12 +112,11 @@ function enableWindowZoom() {
             jQuery(this).data("max", false);
         }
     });
-
 }
 
 function enableWindowCollapse() {
     // Collapse/Expand window -- Minimize the window to just the title bar
-    jQuery(".window-collapse").on("click", function () {
+    $("#app-holder").on("click", ".window-collapse", function () {
         let contentBox = jQuery(this).closest(".content");
         contentBox.css("z-index", "1");
         let shadeHeight = jQuery(this).data(
@@ -149,15 +148,12 @@ function enableWindowCollapse() {
             jQuery("#sound_window_collapse").trigger("play");
         }
     });
-
 }
 
 function enableWindowClose() {
     // Close Box -- Close the window when clicked
-    jQuery(".close-box, .boot-button, .close-button").on(
-        "click",
-        function () {
-            a = this.closest(".content");
+    $("#app-holder").on("click", ".close-box, .boot-button, .close-button", function () {
+            var a = this.closest(".content");
             jQuery(a).addClass("hidden");
             jQuery("#sound_window_close").trigger("play");
             updateAppMenu()
@@ -192,7 +188,7 @@ function enableNav() {
 function enableDesktopIcons() {
     // Enable Desktop Icons
     if (isMobile()) {
-        jQuery(".icon").on("click", function () {
+        $("#icon-holder").on("click", ".icon", function () {
             jQuery("#" + jQuery(this).get(0).id.split("-")[1])
                 .removeClass("hidden")
                 .css("z-index", "9000");
@@ -201,7 +197,7 @@ function enableDesktopIcons() {
         });
     } else {
         jQuery(".draggable-icon").draggable({});
-        jQuery(".icon").on("dblclick", function () {
+        $("#icon-holder").on("dblclick", ".icon",function () {
             jQuery("#" + jQuery(this).get(0).id.split("-")[1])
                 .removeClass("hidden")
                 .css("z-index", "9000");
@@ -209,21 +205,36 @@ function enableDesktopIcons() {
             updateAppMenu()
         });
     }
-
-
 }
 
 function enableWindowOrder() {
     // Make sure the active window is on top
-    jQuery(".content").on("click", function () {
+    $("#app-holder").on("click", ".content", function () {
         jQuery(".content").css("z-index", "1100");
         jQuery(this).css("z-index", "1200");
     });
 
 }
 
-jQuery(function () {
 
+import * as app from '../app/package.js';
+function enableApp() {
+    app.loadAppResource("app/about")
+    app.loadAppResource("app/controls")
+    app.loadAppResource("app/csr-visual/mstatus")
+
+    app.registerApp()
+    updateAppMenu()
+}
+
+
+jQuery(function () {
+    var Module = {
+        onRuntimeInitialized: function() {
+          console.log('lerp result: ' + Module.lerp(1, 2, 0.5));
+        }
+      };
+      
     clock()
     enableWindowDrag()
     enableWindowResize()
@@ -234,9 +245,8 @@ jQuery(function () {
     enableDesktopIcons()
     enableWindowCollapse()
     enableAppMenu()
+    enableApp()
 
-    jQuery("#boot-button").click(function () {
-        boot(this)
-        console.log("bootbutton")
-    });
+
+
 });

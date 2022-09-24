@@ -1,13 +1,12 @@
-# Platimum
-A UI framework using native CSS/JS replications of the Mac OS 8.1 interface components. The project is named after the interface theme that came with MacOS 8 and 9, Platinum.
+# RISC-V Platimum
+riscv-platimum is a collection of the RISC-V visualization tools. The UI framework is based on the [platinum](https://github.com/robbiebyrd/platinum) project.
+
+This project is still work in progress.
+
+## App Available
+- Control Status Register Visualization: mstatus
+
 
 ## Demo
-[`See a demo here!`](https://robbiebyrd.github.io/platinum/)
+[`See a demo here!`](https://riscv-zjv.github.io/riscv-platinum/)
 
-## Acknowledgements
- - New Dawn by [`Nathanael Gentry`](https://github.com/npjg)
- - Scrollbars of the Classic Mac OS by [`Jessica Stokes (@ticky)`](https://github.com/ticky)
- - `after-dark-css`, for the basic System 7.1.1 interface
- - [`flyer`](https://www.masswerk.at/flyer/), for further inspiration
- - Robin Casady, for releasing ChicagoFLF into the public domain
- - Apple, who maintains the copyright on the background patterns, icons and interface components
