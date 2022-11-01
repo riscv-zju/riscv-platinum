@@ -1,18 +1,8 @@
 #include <emscripten/bind.h>
 #include <algorithm>
-
-typedef unsigned long long int reg_t;
-
-#define MASK(width) ((1ULL << width)-1)
-#define TRUNC(val, width) (val & MASK(width))
+#include "utils.h"
 
 using namespace emscripten;
-
-enum handle_t {
-    CSR_HEX_CHANGE,
-    CSR_BIN_CHANGE,
-    CSR_FIELD_CHANGE
-};
 
 struct csr_mstatus_str_t {
   std::string sd;
@@ -73,23 +63,6 @@ struct csr_mstatus_t {
   unsigned char sie;
   unsigned char rev4;
 };
-
-std::string tostring(reg_t n, int base, int width, bool zero=false) {
-  if (zero && (n == 0))
-    return "0";
-
-  std::string s = "";
-  do {
-    int bit = n % base;
-    if (bit > 9)
-      s.insert(0, 1, ('a' + bit - 10));
-    else
-      s.insert(0, 1, ('0' + bit));
-    n = n / base;
-  } while(n != 0);
-  s = std::string(width - s.length(), '0') + s;
-  return s;
-}
 
 reg_t field_to_reg (csr_mstatus_str_t& in) {
   // format field
@@ -236,9 +209,7 @@ void reg_to_field (reg_t reg, csr_mstatus_str_t& in) {
   in.rev4 = tostring(fields.rev4, 2, 1, true);
 }
 
-
-
-csr_mstatus_str_t handler(csr_mstatus_str_t csr, handle_t h) {
+csr_mstatus_str_t mstatus_handler(csr_mstatus_str_t csr, handle_t h) {
   if (h == CSR_FIELD_CHANGE) {
     reg_t reg = field_to_reg(csr);
     csr.bin = tostring(reg, 2, 64);
@@ -261,10 +232,10 @@ csr_mstatus_str_t handler(csr_mstatus_str_t csr, handle_t h) {
 }
 
 EMSCRIPTEN_BINDINGS(mstatus_visual) {
-  enum_<handle_t>("HANDLE")
-    .value("CSR_HEX_CHANGE", CSR_HEX_CHANGE)
-    .value("CSR_BIN_CHANGE", CSR_BIN_CHANGE)
-    .value("CSR_FIELD_CHANGE", CSR_FIELD_CHANGE);
+  // enum_<handle_t>("HANDLE")
+  //   .value("CSR_HEX_CHANGE", CSR_HEX_CHANGE)
+  //   .value("CSR_BIN_CHANGE", CSR_BIN_CHANGE)
+  //   .value("CSR_FIELD_CHANGE", CSR_FIELD_CHANGE);
 
   value_object<csr_mstatus_str_t>("csr_mstatus_t")
   .field("sd", &csr_mstatus_str_t::sd)
@@ -296,5 +267,5 @@ EMSCRIPTEN_BINDINGS(mstatus_visual) {
   .field("hex", &csr_mstatus_str_t::hex)
   .field("bin", &csr_mstatus_str_t::bin);
 
-  function("handler", &handler);
+  function("mstatus_handler", &mstatus_handler);
 }

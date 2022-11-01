@@ -12,11 +12,11 @@ export function listenInput() {
 
         // pass to wasm
         if ($(this).hasClass("csr-input-field")) {
-            csr = asm.Module.handler(csr, asm.Module.HANDLE.CSR_FIELD_CHANGE);
+            csr = asm.Module.mstatus_handler(csr, asm.Module.HANDLE.CSR_FIELD_CHANGE);
         } else if ($(this).hasClass("csr-input-hex")) {
-            csr = asm.Module.handler(csr, asm.Module.HANDLE.CSR_HEX_CHANGE);
+            csr = asm.Module.mstatus_handler(csr, asm.Module.HANDLE.CSR_HEX_CHANGE);
         } else if ($(this).hasClass("csr-input-bin")) {
-            csr = asm.Module.handler(csr, asm.Module.HANDLE.CSR_BIN_CHANGE);
+            csr = asm.Module.mstatus_handler(csr, asm.Module.HANDLE.CSR_BIN_CHANGE);
         } else {
             console.log("Incorrect mstatus request");
         }

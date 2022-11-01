@@ -220,8 +220,9 @@ function enableWindowOrder() {
 import * as app from '../app/package.js';
 function enableApp() {
     app.loadAppResource("app/about")
-    app.loadAppResource("app/controls")
+    // app.loadAppResource("app/controls")
     app.loadAppResource("app/csr-visual/mstatus")
+    app.loadAppResource("app/csr-visual/sstatus")
 
     app.registerApp()
     updateAppMenu()

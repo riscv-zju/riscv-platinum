@@ -1,72 +1,56 @@
-<div id="mstatus" class="content noscroll draggable-window text-center hidden"  data-window-icon="img/file.png" data-window-name="Mstatus">
+<div id="sstatus" class="content noscroll draggable-window text-center hidden"  data-window-icon="img/file.png" data-window-name="Sstatus">
     <div class="control-box close-box">
         <a class="control-box-inner"></a>
     </div>
-    <h1 class="titlebar noright"><span>Control Status Register Visualization: mstatus</span></h1>
+    <h1 class="titlebar noright"><span>Control Status Register Visualization: sstatus</span></h1>
     <div class="inner">
         <div id="app-csr-visual-inner" class="field-holder">
             <table>
                 <tr>
                     <th>SD[63]</th>
-                    <th>[62:38]</th>
-                    <th>MBE[37]</th>
-                    <th>SBE[36]</th>
-                    <th>SXL[35:34]</th>
+                    <th>[62:34]</th>
                     <th>UXL[33:32]</th>
-                    <th>[31:23]</th>
-                    <th>TSR[22]</th>
-                    <th>TW[21]</th>
-                    <th>TVM[20]</th>
+                    <th>[31:20]</th>
                     <th>MXR[19]</th>
                     <th>SUM[18]</th>
+                    <th>[17]</th>
                 </tr> 
                 <tr>
                     <td><input field="sd"   value="0" type="text" size="1" class="csr-input-field"></td>
                     <td><input field="rev0" value="0" type="text" size="1" class="csr-input-field" disabled></td>
-                    <td><input field="mbe"  value="0" type="text" size="1" class="csr-input-field"></td>
-                    <td><input field="sbe"  value="0" type="text" size="1" class="csr-input-field"></td>
-                    <td><input field="sxl"  value="0" type="text" size="1" class="csr-input-field"></td>
                     <td><input field="uxl"  value="0" type="text" size="1" class="csr-input-field"></td>
                     <td><input field="rev1" value="0" type="text" size="1" class="csr-input-field" disabled></td>
-                    <td><input field="tsr"  value="0" type="text" size="1" class="csr-input-field"></td>
-                    <td><input field="tw"   value="0" type="text" size="1" class="csr-input-field"></td>
-                    <td><input field="tvm"  value="0" type="text" size="1" class="csr-input-field"></td>
                     <td><input field="mxr"  value="0" type="text" size="1" class="csr-input-field"></td>
                     <td><input field="sum"  value="0" type="text" size="1" class="csr-input-field"></td>
+                    <td><input field="rev2" value="0" type="text" size="1" class="csr-input-field" disabled></td>
                 </tr>
             </table>
             <table>
                 <tr>
-                    <th>MPRV[17]</th>
                     <th>XS[16:15]</th>
                     <th>FS[14:13]</th>
-                    <th>MPP[12:11]</th>
+                    <th>[12:11]</th>
                     <th>VS[10:9]</th>
                     <th>SPP[8]</th>
-                    <th>MPIE[7]</th>
+                    <th>[7]</th>
                     <th>UBE[6]</th>
                     <th>SPIE[5]</th>
-                    <th>[4]</th>
-                    <th>MIE[3]</th>
-                    <th>[2]</th>
+                    <th>[4:2]</th>
                     <th>SIE[1]</th>
                     <th>[0]</th>
                 </tr>
                 <tr>
-                    <td><input field="mprv" value="0" type="text" size="1" class="csr-input-field"></td>
                     <td><input field="xs"   value="0" type="text" size="1" class="csr-input-field"></td>
                     <td><input field="fs"   value="0" type="text" size="1" class="csr-input-field"></td>
-                    <td><input field="mpp"  value="0" type="text" size="1" class="csr-input-field"></td>
+                    <td><input field="rev3" value="0" type="text" size="1" class="csr-input-field" disabled></td>
                     <td><input field="vs"   value="0" type="text" size="1" class="csr-input-field"></td>
                     <td><input field="spp"  value="0" type="text" size="1" class="csr-input-field"></td>
-                    <td><input field="mpie" value="0" type="text" size="1" class="csr-input-field"></td>
+                    <td><input field="rev4" value="0" type="text" size="1" class="csr-input-field" disabled></td>
                     <td><input field="ube"  value="0" type="text" size="1" class="csr-input-field"></td>
                     <td><input field="spie" value="0" type="text" size="1" class="csr-input-field"></td>
-                    <td><input field="rev2" value="0" type="text" size="1" class="csr-input-field" disabled></td>
-                    <td><input field="mie"  value="0" type="text" size="1" class="csr-input-field"></td>
-                    <td><input field="rev3" value="0" type="text" size="1" class="csr-input-field" disabled></td>
+                    <td><input field="rev5" value="0" type="text" size="1" class="csr-input-field" disabled></td>
                     <td><input field="sie"  value="0" type="text" size="1" class="csr-input-field"></td>
-                    <td><input field="rev4" value="0" type="text" size="1" class="csr-input-field" disabled></td>
+                    <td><input field="rev6" value="0" type="text" size="1" class="csr-input-field" disabled></td>
                 </tr>
               </table>
             <hr />

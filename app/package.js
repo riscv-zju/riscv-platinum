@@ -1,4 +1,5 @@
 import * as mstatus from "./csr-visual/mstatus/app.js"
+import * as sstatus from "./csr-visual/sstatus/app.js"
 
 export function loadAppResource(path) {
     fetch(path+"/ui.html")
@@ -22,4 +23,5 @@ export function loadAppResource(path) {
 
 export function registerApp() {
     mstatus.listenInput()
+    sstatus.listenInput()
 }
