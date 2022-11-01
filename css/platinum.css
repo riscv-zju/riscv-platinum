@@ -14,20 +14,14 @@
 
 html,
 body {
-    /* -moz-user-select: none;
+    -moz-user-select: none;
     -webkit-user-select: none;
-    user-select: none; */
+    user-select: none;
     height: 100%;
     margin: 0;
     overflow: hidden;
 }
 
-*:not(input, textarea) {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
 
 .center {
     display: block;
