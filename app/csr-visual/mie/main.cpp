@@ -104,7 +104,7 @@ void reg_to_field (reg_t reg, csr_mie_str_t& in) {
   fields.ssip = TRUNC(reg >> 1, 1);
   fields.rev6 = TRUNC(reg >> 0, 1);
 
-  in.rev0 = tostring(fields.rev0, 2, 1, true);
+  in.rev0 = tostring(fields.rev0, 2, 52, true);
   in.meip = tostring(fields.meip, 2, 1);
   in.rev1 = tostring(fields.rev1, 2, 1, true);
   in.seip = tostring(fields.seip, 2, 1);

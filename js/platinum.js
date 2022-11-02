@@ -224,6 +224,7 @@ function enableApp() {
     app.loadAppResource("app/csr-visual/mstatus")
     app.loadAppResource("app/csr-visual/sstatus")
     app.loadAppResource("app/csr-visual/mie")
+    app.loadAppResource("app/csr-visual/medeleg")
 
     app.registerApp()
     updateAppMenu()

@@ -1,0 +1,151 @@
+<div id="medeleg" class="content noscroll draggable-window text-center hidden"  data-window-icon="img/file.png" data-window-name="Medeleg">
+    <div class="control-box close-box">
+        <a class="control-box-inner"></a>
+    </div>
+    <h1 class="titlebar noright"><span>Control Status Register Visualization: medeleg, mcause </span></h1>
+    <div class="inner">
+        <div id="app-csr-visual-inner" class="field-holder">
+            <table>
+                <caption>medeleg with mcause (exception part)</caption>
+                <tr>
+                    <!-- <td style="border: 0;"></td> -->
+                    <th >medeleg <br /> Field Range</th>
+                    <th >medeleg <br /> Value</th>
+                    <th >mcause <br /> Interrupt [63]</th>
+                    <th >mcause <br /> Exception Code[62:0]</th>
+                    <th >Description</th>
+                </tr>
+                <tr>
+                    <th>[0]</th>
+                    <td><input field="misaligned_fetch" value="0" type="text" size="1" class="csr-input-field"></td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>Instruction address misaligned</td>
+                </tr>
+                <tr>
+                    <th>[1]</th>
+                    <td><input field="fetch_access" value="0" type="text" size="1" class="csr-input-field"></td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>Instruction access fault</td>
+                </tr>
+                <tr>
+                    <th>[2]</th>
+                    <td><input field="illegal_instruction" value="0" type="text" size="1" class="csr-input-field"></td>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>Illegal instruction</td>
+                </tr>
+                <tr>
+                    <th>[3]</th>
+                    <td><input field="breakpoint" value="0" type="text" size="1" class="csr-input-field"></td>
+                    <td>0</td>
+                    <td>3</td>
+                    <td>Breakpoint</td>
+                </tr>
+                <tr>
+                    <th>[4]</th>
+                    <td><input field="misaligned_load" value="0" type="text" size="1" class="csr-input-field"></td>
+                    <td>0</td>
+                    <td>4</td>
+                    <td>Load address misaligned</td>
+                </tr>
+                <tr>
+                    <th>[5]</th>
+                    <td><input field="load_access" value="0" type="text" size="1" class="csr-input-field"></td>
+                    <td>0</td>
+                    <td>5</td>
+                    <td>Load access fault</td>
+                </tr>
+                <tr>
+                    <th>[6]</th>
+                    <td><input field="misaligned_store" value="0" type="text" size="1" class="csr-input-field"></td>
+                    <td>0</td>
+                    <td>6</td>
+                    <td>Store/AMO address misaligned</td>
+                </tr>
+                <tr>
+                    <th>[7]</th>
+                    <td><input field="store_access" value="0" type="text" size="1" class="csr-input-field"></td>
+                    <td>0</td>
+                    <td>7</td>
+                    <td>Store/AMO access fault</td>
+                </tr>
+                <tr>
+                    <th>[8]</th>
+                    <td><input field="user_ecall" value="0" type="text" size="1" class="csr-input-field"></td>
+                    <td>0</td>
+                    <td>8</td>
+                    <td>Environment call from U-mode</td>
+                </tr>
+                <tr>
+                    <th>[9]</th>
+                    <td><input field="supervisor_ecall" value="0" type="text" size="1" class="csr-input-field"></td>
+                    <td>0</td>
+                    <td>9</td>
+                    <td>Environment call from S-mode</td>
+                </tr>
+                <tr>
+                    <th>[10]</th>
+                    <td><input field="rev2" value="0" type="text" size="1" class="csr-input-field" disabled></td>
+                    <td>0</td>
+                    <td>10</td>
+                    <td>Reserved</td>
+                </tr>
+                <tr>
+                    <th>[11]</th>
+                    <td><input field="machine_ecall" value="0" type="text" size="1" class="csr-input-field"></td>
+                    <td>0</td>
+                    <td>11</td>
+                    <td>Environment call from M-mode</td>
+                </tr>
+                <tr>
+                    <th>[12]</th>
+                    <td><input field="fetch_page_fault" value="0" type="text" size="1" class="csr-input-field"></td>
+                    <td>0</td>
+                    <td>12</td>
+                    <td>Instruction page fault</td>
+                </tr>
+                <tr>
+                    <th>[13]</th>
+                    <td><input field="load_page_fault" value="0" type="text" size="1" class="csr-input-field"></td>
+                    <td>0</td>
+                    <td>13</td>
+                    <td>Load page fault</td>
+                </tr>
+                <tr>
+                    <th>[14]</th>
+                    <td><input field="rev1" value="0" type="text" size="1" class="csr-input-field" disabled></td>
+                    <td>0</td>
+                    <td>14</td>
+                    <td>Reserved</td>
+                </tr>
+                <tr>
+                    <th>[15]</th>
+                    <td><input field="store_page_fault" value="0" type="text" size="1" class="csr-input-field"></td>
+                    <td>0</td>
+                    <td>15</td>
+                    <td>Store/AMO page fault</td>
+                </tr>
+                <tr>
+                    <th>[63:16]</th>
+                    <td><input field="rev0" value="0" type="text" size="1" class="csr-input-field" disabled></td>
+                    <td>0</td>
+                    <td>16-63</td>
+                    <td>Reserved or <br /> Designated for custom use</td>
+                </tr>
+                <tr>
+                    <td style="border: 0;"></td>
+                    <td></td>
+                    <td>0</td>
+                    <td>≥64</td>
+                    <td>Reserved</td>
+                </tr>
+            </table>           
+            <hr />
+            <label>Hex:    </label><input value="0" type="text" size="14" class="csr-input-hex">
+            <label>Binary: </label><input value="0" type="text" size="68" class="csr-input-bin">
+            
+        </div>
+    </div>
+</div>
