@@ -1,0 +1,141 @@
+<div id="mie" class="content noscroll draggable-window text-center hidden"  data-window-icon="img/file.png" data-window-name="Mie">
+    <div class="control-box close-box">
+        <a class="control-box-inner"></a>
+    </div>
+    <h1 class="titlebar noright"><span>Control Status Register Visualization: mie, mip, mideleg, mcause </span></h1>
+    <div class="inner">
+        <h2>mie, mip, mideleg</h2>
+        <div id="app-csr-visual-inner" class="field-holder">
+            <table>
+                <tr>
+                    <th>[63:12]</th>
+                    <th>MEIP[11]</th>
+                    <th>[10]</th>
+                    <th>SEIP[9]</th>
+                    <th>[8]</th>
+                    <th>MTIP[7]</th>
+                    <th>[6]</th>
+                    <th>STIP[5]</th>
+                    <th>[4]</th>
+                    <th>MSIP[3]</th>
+                    <th>[2]</th>
+                    <th>SSIP[1]</th>
+                    <th>[0]</th>
+                </tr> 
+                <tr>
+                    <th>[63:12]</th>
+                    <th>MEIE[11]</th>
+                    <th>[10]</th>
+                    <th>SEIE[9]</th>
+                    <th>[8]</th>
+                    <th>MTIE[7]</th>
+                    <th>[6]</th>
+                    <th>STIE[5]</th>
+                    <th>[4]</th>
+                    <th>MSIE[3]</th>
+                    <th>[2]</th>
+                    <th>SSIE[1]</th>
+                    <th>[0]</th>
+                </tr> 
+                <tr>
+                    <td> <input field="rev0" value="0" type="text"  size="1" class="csr-input-field" disabled> </td>
+                    <td> <input field="meip" value="0" type="text"  size="1" class="csr-input-field"> </td>
+                    <td> <input field="rev1" value="0" type="text"  size="1" class="csr-input-field" disabled> </td>
+                    <td> <input field="seip" value="0" type="text"  size="1" class="csr-input-field"> </td>
+                    <td> <input field="rev2" value="0" type="text"  size="1" class="csr-input-field" disabled> </td>
+                    <td> <input field="mtip" value="0" type="text"  size="1" class="csr-input-field"> </td>
+                    <td> <input field="rev3" value="0" type="text"  size="1" class="csr-input-field" disabled> </td>
+                    <td> <input field="stip" value="0" type="text"  size="1" class="csr-input-field"> </td>
+                    <td> <input field="rev4" value="0" type="text"  size="1" class="csr-input-field" disabled> </td>
+                    <td> <input field="msip" value="0" type="text"  size="1" class="csr-input-field"> </td>
+                    <td> <input field="rev5" value="0" type="text"  size="1" class="csr-input-field" disabled> </td>
+                    <td> <input field="ssip" value="0" type="text"  size="1" class="csr-input-field"> </td>
+                    <td> <input field="rev6" value="0" type="text"  size="1" class="csr-input-field" disabled> </td>
+                </tr>
+            </table>
+            <hr />
+            <label>Hex:    </label><input value="0" type="text" size="14" class="csr-input-hex">
+            <label>Binary: </label><input value="0" type="text" size="68" class="csr-input-bin">
+            
+        </div>
+        <hr />
+        <h2>mcause (interrupt part)</h2>
+        <table border="1" cellpadding="4" cellspacing="0" style="margin:auto;">
+            <tr>
+                <th>Interrupt[63]</th>
+                <th>Exception Code[62:0]</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>Reserved</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>Supervisor software interrupt</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>Reserved</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>3</td>
+                <td>Machine software interrupt</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>4</td>
+                <td>Reserved</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>5</td>
+                <td>Supervisor timer interrupt</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>6</td>
+                <td>Reserved</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>7</td>
+                <td>Machine timer interrupt</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>8</td>
+                <td>Reserved</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>9</td>
+                <td>Supervisor external interrupt</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>10</td>
+                <td>Reserved</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>11</td>
+                <td>Machine external interrupt</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>12-15</td>
+                <td>Reserved</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>≥16</td>
+                <td>Designated for platform use</td>
+            </tr>
+        </table>
+    </div>
+</div>
