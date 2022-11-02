@@ -1,6 +1,7 @@
 import * as mstatus from "./csr-visual/mstatus/app.js"
 import * as sstatus from "./csr-visual/sstatus/app.js"
 import * as mie from "./csr-visual/mie/app.js"
+import * as sie from "./csr-visual/sie/app.js"
 import * as medeleg from "./csr-visual/medeleg/app.js"
 
 export function loadAppResource(path, icon=true) {
@@ -29,5 +30,6 @@ export function registerApp() {
     mstatus.listenInput()
     sstatus.listenInput()
     mie.listenInput()
+    sie.listenInput()
     medeleg.listenInput()
 }

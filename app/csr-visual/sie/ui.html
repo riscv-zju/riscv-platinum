@@ -1,0 +1,170 @@
+<div id="sie" class="content noscroll draggable-window text-center hidden"  data-window-icon="img/file.png" data-window-name="Sie">
+    <div class="control-box close-box">
+        <a class="control-box-inner"></a>
+    </div>
+    <h1 class="titlebar noright"><span>Control Status Register Visualization: sie, sip, scause </span></h1>
+    <div class="inner">
+        <div id="app-csr-visual-inner" class="field-holder">
+            <table>
+                <caption>sie, sip</caption>
+                <tr>
+                    <th>[63:10]</th>
+                    <th>SEIP[9]</th>
+                    <th>[8:6]</th>
+                    <th>STIP[5]</th>
+                    <th>[4:2]</th>
+                    <th>SSIP[1]</th>
+                    <th>[0]</th>
+                </tr> 
+                <tr>
+                    <th>[63:10]</th>
+                    <th>SEIE[9]</th>
+                    <th>[8:6]</th>
+                    <th>STIE[5]</th>
+                    <th>[4:2]</th>
+                    <th>SSIE[1]</th>
+                    <th>[0]</th>
+                </tr> 
+                <tr>
+                    <td> <input field="rev0" value="0" type="text"  size="1" class="csr-input-field" disabled> </td>
+                    <td> <input field="seip" value="0" type="text"  size="1" class="csr-input-field"> </td>
+                    <td> <input field="rev1" value="0" type="text"  size="1" class="csr-input-field" disabled> </td>
+                    <td> <input field="stip" value="0" type="text"  size="1" class="csr-input-field"> </td>
+                    <td> <input field="rev2" value="0" type="text"  size="1" class="csr-input-field" disabled> </td>
+                    <td> <input field="ssip" value="0" type="text"  size="1" class="csr-input-field"> </td>
+                    <td> <input field="rev3" value="0" type="text"  size="1" class="csr-input-field" disabled> </td>
+                </tr>
+            </table>
+            <hr />
+            <label>Hex:    </label><input value="0" type="text" size="14" class="csr-input-hex">
+            <label>Binary: </label><input value="0" type="text" size="68" class="csr-input-bin">
+            
+        </div>
+        <hr />
+        <table border="1" cellpadding="4" cellspacing="0" style="margin:auto;">
+            <caption>scause</caption>
+            <!-- Interrupt -->
+            <tr>
+                <th>Interrupt[63]</th>
+                <th>Exception Code[62:0]</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>Reserved</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>Supervisor software interrupt</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2-4</td>
+                <td>Reserved</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>5</td>
+                <td>Supervisor timer interrupt</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>6-8</td>
+                <td>Reserved</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>9</td>
+                <td>Supervisor external interrupt</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>≥10</td>
+                <td>Reserved or <br /> Designated for platform use</td>
+            </tr>
+            <!-- Exception -->
+            <tr>
+                <td>0</td>
+                <td>0</td>
+                <td>Instruction address misaligned</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>1</td>
+                <td>Instruction access fault</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>2</td>
+                <td>Illegal instruction</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>3</td>
+                <td>Breakpoint</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>4</td>
+                <td>Load address misaligned</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>5</td>
+                <td>Load access fault</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>6</td>
+                <td>Store/AMO address misaligned</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>7</td>
+                <td>Store/AMO access fault</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>8</td>
+                <td>Environment call from U-mode</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>9</td>
+                <td>Environment call from S-mode</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>10-11</td>
+                <td>Reserved</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>12</td>
+                <td>Instruction page fault</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>13</td>
+                <td>Load page fault</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>14</td>
+                <td>Reserved</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>15</td>
+                <td>Store/AMO page fault</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>≥16</td>
+                <td>Reserved or <br /> Designated for custom use</td>
+            </tr>
+        </table>
+    </div>
+</div>
